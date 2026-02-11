@@ -25,7 +25,7 @@ Button one rerenders, screen one rerenders
 Button two rerenders, button three rerenders, screen two rerenders, screen three rerenders
 - **Event: Reset clicked!**
 Button three renders, screen three renders
-Event: Button one clicked! 
+- **Event: Button one clicked!**
 Button one rerenders, screen one rerenders
 
 Etc, etc...
