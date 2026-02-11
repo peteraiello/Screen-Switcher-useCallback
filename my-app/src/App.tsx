@@ -6,6 +6,9 @@ import "./App.css";
 /* Create a initial state variable for active screen to an empty string (all screens inactive) */
 const initialState = "";
 
+/* Create a variable for reset */
+const reset = "Reset";
+
 /* Create multiple variables for screens i.e. 'Screen one', 'Screen two' etc */
 export const screenOne = "Screen one";
 export const screenTwo = "Screen two"; 
@@ -13,7 +16,7 @@ export const screenThree = "Screen three";
 export const screenFour = "Screen four";
 
 /* Create a type for screen state using union types (can either be 'Screen one', 'Screen two', 'Screen... etc' or an empty string) */
-export type screenState = typeof initialState | typeof screenOne | typeof screenTwo | typeof screenThree | typeof screenFour;
+export type screenState = typeof reset | typeof initialState | typeof screenOne | typeof screenTwo | typeof screenThree | typeof screenFour;
 
 /* Create an array containing screen strings used to loop through for Screen and Button components */
 const screens = [screenOne, screenTwo, screenThree, screenFour];
@@ -30,7 +33,11 @@ function App() {
   */
   const handleButtonClick = useCallback((screenId: screenState) => {
     console.log('Button clicked! ', screenId);
-    setActiveScreen(screenId);
+    if(screenId !== reset) {
+      setActiveScreen(screenId);
+    } else {
+      setActiveScreen(initialState);
+    }
   }, []); 
 
   return (
@@ -56,6 +63,9 @@ function App() {
               </div>
             )
           })}
+
+          <Button text={"Reset"} buttonClicked={handleButtonClick} isActive={false} />
+
         </div>
       }
       <p>{activeScreen === "" ? "No screen actives" : activeScreen + " is active" }</p>

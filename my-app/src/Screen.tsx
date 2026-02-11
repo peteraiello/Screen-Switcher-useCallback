@@ -11,7 +11,7 @@ export const Screen = React.memo(({
     screenId
 }: ScreenProps) => {
 
-    console.log("screen ", screenId, "rendered");
+    console.log("screen ", screenId, "renders");
 
     return (
         <div className={ activeScreen ? "screen screen-active" : "screen"}>

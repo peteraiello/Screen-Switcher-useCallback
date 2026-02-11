@@ -21,7 +21,11 @@ Event: Button two clicked!
 Button one rerenders, button two rerenders, screen one rerenders, screen two rerenders
 Event: Button three clicked! 
 Button two rerenders, button three rerenders, screen two rerenders, screen three rerenders
-... etc, etc
+Event: Reset clicked! 
+Button three renders, screen three renders
+Event: Button one clicked! 
+Button one rerenders, screen one rerenders
+Etc, etc...
 
 # Key things two remember
 - useCallback should be used to avoid unnecessary rerenders for functions passed from the parent to the child components (component rerendering should only be triggered when something has changed).

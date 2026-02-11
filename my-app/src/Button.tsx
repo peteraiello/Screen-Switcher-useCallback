@@ -16,7 +16,7 @@ export const Button = React.memo(({
     const handleClick = () => {
       buttonClicked(text)
     }
-    console.log("button ", text, "rendered");
+    console.log("button ", text, "renders");
 
     return (
         <>
