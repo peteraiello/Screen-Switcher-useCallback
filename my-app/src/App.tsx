@@ -68,7 +68,7 @@ function App() {
 
         </div>
       }
-      <p>{activeScreen === "" ? "No screen actives" : activeScreen + " is active" }</p>
+      <p>{activeScreen === "" ? "No screen active" : activeScreen + " is active" }</p>
     </div>
   );
 }
